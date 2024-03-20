@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-size: 100%;
+  background: linear-gradient(to bottom, #f2f2f2, #dcdcdc);
+}
+.cabecalho-imagem {
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cabecalho-menu {
+  display: flex;
+  gap: 32px;
+}
+
+.cabecalho-menu-item {
+  font-family: "Sarala", sans-serif;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.conteudo {
+  margin-bottom: 48px;
+  border-top: 0.4px solid black;
+
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.conteudo-principal-escrito {
+  display: flex;
+  flex-direction: column;
+}
+
+.conteudo-principal-escrito-titulo {
+  font-family: 'Righteous', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.conteudo-principal-escrito-subtitulo {
+  font-family: "Sarala", sans-serif;
+  color: black;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.conteudo-principal-imagem {
+  max-width:250px;
+  max-height:200px;
+  width: auto;
+  height: auto;
+  padding-top: 32px;
+}
+
+.conteudo-secundario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.conteudo-secundario-titulo {
+  border-top: 0.4px solid black;
+  padding-top: 48px;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: black;
+  margin-bottom: 16px;
+}
+
+.conteudo-secundario-paragrafo {
+  font-family: "Sarala", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  margin: 0 70px 0 70px;
+}
+
+.rodape {
+  border-top: 0.4px solid black;
+  padding: 32px;
+}
+
+.rodape-imagem {
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
