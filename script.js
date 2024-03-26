@@ -1,43 +1,66 @@
-import videosTips from "./videosTips";
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para carregar os vídeos na playlist
+    function loadVideos() {
+        const playlistArea = document.querySelector(".playlist");
 
-function loadVideos() {
-    const playlist_area = document.querySelector(".playlist");
-
-    videosTips.forEach((video, index) => {
-        const div = document.createElement("div");
-
-        div.innerHTML = `
-        <div class"playlist-video ${index + 1 === 1 && "active"}">
-        video src=${videosTips.src} muted></video>
-        <label class="playlist-video-info">${videosTips.title}</label>
-        </div>
-        `;
-
-        playlist_area.appendChild(div);
-    });
-
-    function addOnClick() {
-        const video_main = document.querySelector(".main-video-content");
-        const playlist_video = document.querySelectorAll(".playlist-video");
-
-        playlist_video.forEach((item, i) => {
-            if (!i) {
-                setVideo(video_main, item);
+        videoList.forEach((video, index) => {
+            const div = document.createElement("div");
+            div.classList.add("playlist-video");
+            if (index === 0) {
+                div.classList.add("active");
             }
 
-            item.onClick = () => {
-                playlist_video.forEach((video) => video.classList.remove("active"));
-                item.classList.add("active");
+            div.innerHTML = `
+                <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail">
+                <label class="playlist-video-info">${video.title}</label>
+            `;
+            div.addEventListener("click", () => selectVideo(div));
 
-                setVideo(video_main, item);
-            };
+            playlistArea.appendChild(div);
         });
     }
 
-    function setVideo(video_main, item) {
-        video_main.children[0].src = item.children[0].getAttribute("src");
-        video_main.children[1].innerHTML = item.children[1].innerHTML;
+    // Função para selecionar um vídeo da playlist
+    function selectVideo(videoElement) {
+        const playlistVideos = document.querySelectorAll(".playlist-video");
+        playlistVideos.forEach(video => video.classList.remove("active"));
+        videoElement.classList.add("active");
+
+        const mainVideo = document.querySelector(".main-video-content video");
+        const mainVideoInfo = document.querySelector(".main-video-content label");
+        mainVideo.src = videoElement.querySelector(".thumbnail").src;
+        mainVideoInfo.innerHTML = videoElement.querySelector("label").innerHTML;
     }
 
+    // Função para adicionar evento de clique aos vídeos da playlist
+    function addOnClick() {
+        const playlistVideos = document.querySelectorAll(".playlist-video");
+
+        playlistVideos.forEach((item) => {
+            item.addEventListener("click", () => {
+                const videoMain = document.querySelector(".main-video-content");
+                selectVideo(item);
+            });
+        });
+    }
+
+    // Chamando as funções necessárias ao carregar a página
     loadVideos();
-}
+    addOnClick();
+
+    // Carregar o primeiro vídeo na main-video-content ao carregar a página
+    const firstVideo = document.querySelector('.playlist-video');
+    if (firstVideo) {
+        const videoMain = document.querySelector(".main-video-content");
+        selectVideo(firstVideo);
+    }
+});
+
+
+// function snipperYtbPlay(evt) {
+//     evt.currentTarget.removeEventListener('click', snipperYtbPlay);
+
+//     evt.currentTarget.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${evt.currentTarget.dataSet.id}?autoplay=1" 
+//     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+//     picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+// }
