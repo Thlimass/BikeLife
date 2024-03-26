@@ -140,6 +140,17 @@ body {
   overflow: auto;
   max-height: 400px;
   padding: 2px;
+  font-family: "Sarala", sans-serif;
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.main-info {
+  font-family: "Sarala", sans-serif;
+  color: black;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .playlist::-webkit-scrollbar {
