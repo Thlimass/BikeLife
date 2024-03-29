@@ -1,66 +1,44 @@
+// Aguarde o conteúdo HTML ser carregado
 document.addEventListener("DOMContentLoaded", function() {
-    // Função para carregar os vídeos na playlist
-    function loadVideos() {
-        const playlistArea = document.querySelector(".playlist");
+    // Seleciona os elementos do DOM que você precisa
+    const videoContent = document.querySelector('.video-content');
+    const playlist = document.querySelector('.playlist');
 
+    // Função para carregar o primeiro item da lista ao carregar a página
+    function loadFirstItem() {
+        const firstItem = videoList[0];
+        renderVideo(firstItem);
+    }
+
+    // Função para renderizar o vídeo na div de conteúdo do vídeo
+    function renderVideo(video) {
+        videoContent.innerHTML = `<iframe width="560" height="315" src="${video.url}" frameborder="0" allowfullscreen></iframe>`;
+    }
+
+    // Função para renderizar a playlist na div de playlist
+    function renderPlaylist() {
+        playlist.innerHTML = '';
         videoList.forEach((video, index) => {
-            const div = document.createElement("div");
-            div.classList.add("playlist-video");
-            if (index === 0) {
-                div.classList.add("active");
-            }
-
-            div.innerHTML = `
-                <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail">
-                <label class="playlist-video-info">${video.title}</label>
-            `;
-            div.addEventListener("click", () => selectVideo(div));
-
-            playlistArea.appendChild(div);
-        });
-    }
-
-    // Função para selecionar um vídeo da playlist
-    function selectVideo(videoElement) {
-        const playlistVideos = document.querySelectorAll(".playlist-video");
-        playlistVideos.forEach(video => video.classList.remove("active"));
-        videoElement.classList.add("active");
-
-        const mainVideo = document.querySelector(".main-video-content video");
-        const mainVideoInfo = document.querySelector(".main-video-content label");
-        mainVideo.src = videoElement.querySelector(".thumbnail").src;
-        mainVideoInfo.innerHTML = videoElement.querySelector("label").innerHTML;
-    }
-
-    // Função para adicionar evento de clique aos vídeos da playlist
-    function addOnClick() {
-        const playlistVideos = document.querySelectorAll(".playlist-video");
-
-        playlistVideos.forEach((item) => {
-            item.addEventListener("click", () => {
-                const videoMain = document.querySelector(".main-video-content");
-                selectVideo(item);
+            const listItem = document.createElement('div');
+            listItem.classList.add('playlist-item');
+            // Adiciona a numeração ao título do vídeo
+            listItem.textContent = `${index + 1}. ${video.title}`;
+            // Adiciona um evento de clique em cada item da lista
+            listItem.addEventListener('click', () => {
+                renderVideo(video);
+                // Remove a classe 'selected' de todos os itens da playlist
+                document.querySelectorAll('.playlist-item').forEach(item => {
+                    item.classList.remove('selected');
+                });
+                // Adiciona a classe 'selected' ao item clicado
+                listItem.classList.add('selected');
             });
+            playlist.appendChild(listItem);
         });
     }
 
-    // Chamando as funções necessárias ao carregar a página
-    loadVideos();
-    addOnClick();
 
-    // Carregar o primeiro vídeo na main-video-content ao carregar a página
-    const firstVideo = document.querySelector('.playlist-video');
-    if (firstVideo) {
-        const videoMain = document.querySelector(".main-video-content");
-        selectVideo(firstVideo);
-    }
+    // Renderiza a playlist e o primeiro vídeo ao carregar a página
+    renderPlaylist();
+    loadFirstItem();
 });
-
-
-// function snipperYtbPlay(evt) {
-//     evt.currentTarget.removeEventListener('click', snipperYtbPlay);
-
-//     evt.currentTarget.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${evt.currentTarget.dataSet.id}?autoplay=1" 
-//     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
-//     picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-// }
