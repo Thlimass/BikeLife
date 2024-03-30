@@ -12,6 +12,7 @@ O NumaBike oferece as seguintes funcionalidades:
 
 - **Envio de email de contato**: Os usuários podem enviar uma mensagem adicionando seu nome, email e a mensagem. Essa mensagem chega na caixa de entrada do NumaBike. Utilizei o [Static Forms](https://www.staticforms.xyz/) para gerenciar o envio dos emails
 
+![Email de contato](assets/foto_email.png)
 
 ## Tecnologias utilizadas
 
