@@ -34,11 +34,11 @@
       <form action="https://api.staticforms.xyz/submit" method="post">
         <input type="hidden" name="accessKey" value="5ec26e8d-4f9b-4938-9800-7e62a44ef2f3">
         <label>Nome</label>
-        <input type="text" name="name" placeholder="Digite seu nome">
+        <input type="text" name="name" placeholder="Digite seu nome" autocomplete="off" required>
         <label>Email</label>
-        <input type="email" name="email" placeholder="seu-email@gmail.com">
+        <input type="email" name="email" placeholder="seu-email@gmail.com" autocomplete="off" required>
         <label>Mensagem</label>
-        <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem"></textarea>
+        <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem" required></textarea>
         <button type="submit">Enviar</button>
 
         <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/thanks.html">
