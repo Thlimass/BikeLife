@@ -106,6 +106,22 @@ body {
   margin: 0 70px 0 70px;
 }
 
+/* Rodapé */
+.baseboard {
+  border-top: 0.4px solid black;
+  padding: 32px;
+}
+
+.baseboard-image {
+  max-width:200px;
+  max-height:150px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Pagina de Dicas*/
 .container {
   display: flex;
   align-items: center;
@@ -157,6 +173,7 @@ body {
   color: white;
 }
 
+/* Pagina de Contato*/
 .main-contact {
   display: flex;
   align-items: center;
@@ -229,34 +246,7 @@ transition: all 0.5s;
   border-radius: 16px;
 }
 
-
-@media (max-width: 900px) {
-  .tips-page {
-    flex-direction: column;
-    margin-top: 60px;
-    height: -webkit-fill-available;
-  }
-
-  .main-container, .main-video-content video {
-    width: 100%;
-  }
-}
-
-.baseboard {
-  border-top: 0.4px solid black;
-  padding: 32px;
-}
-
-.baseboard-image {
-  max-width:200px;
-  max-height:150px;
-  width: auto;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/*Página do Agradecimento*/
+/* Página do Agradecimento */
 
 .main-thanks {
 display: flex;
@@ -293,4 +283,16 @@ margin-bottom: 30px;
 
 .btn:hover {
   border-radius: 16px;
+}
+
+@media (max-width: 900px) {
+  .tips-page {
+    flex-direction: column;
+    margin-top: 60px;
+    height: -webkit-fill-available;
+  }
+
+  .main-container, .main-video-content video {
+    width: 100%;
+  }
 }
