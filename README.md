@@ -10,6 +10,8 @@ O NumaBike oferece as seguintes funcionalidades:
 
 - **Reprodução de Vídeos**: Os usuários podem assistir aos vídeos diretamente na página, com a capacidade de selecionar um vídeo da lista de dicas.
 
+- **Envio de email de contato**: Os usuários podem enviar uma mensagem adicionando seu nome, email e a mensagem. Essa mensagem chega na caixa de entrada do NumaBike. Utilizei o [Static Forms](https://www.staticforms.xyz/) para gerenciar o envio dos emails
+
 
 ## Tecnologias utilizadas
 
