@@ -151,6 +151,78 @@ body {
   background-color: gray;
 }
 
+.main-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 48px;
+  padding: 10px 45px;
+  background-color: black;
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;  
+}
+
+.main-contact form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.main-contact form label {
+  color: #f5f5f5;
+  font-family: "Sarala", sans-serif;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.main-contact form input {
+padding: 15px;
+outline: none;
+border: 0;
+margin-bottom: 20px;
+font-family: sans-serif;
+font-size: 15px;
+transition: all 0.5s;
+}
+
+.main-contact form input:focus {
+  border-radius: 16px;
+}
+
+.main-contact form textarea {
+  padding: 10px;
+  outline: none;
+  border: 0;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-bottom: 30px;
+  transition: all 0.5s;
+}
+
+.main-contact form textarea:focus {
+  border-radius: 16px;
+}
+
+.main-contact form button {
+  padding: 15px;
+  cursor: pointer;
+  font-family: "Sarala", sans-serif;
+  font-size: 16px;
+  background: transparent;
+  color: #f5f5f5;
+  transition: all 1s;
+  margin-bottom: 20px;
+}
+
+.main-contact form button:hover {
+  background-color: #f2f2f2;
+  color: black;
+  border-radius: 16px;
+}
+
 
 @media (max-width: 900px) {
   .container {
