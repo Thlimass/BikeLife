@@ -26,19 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
             // Adiciona um evento de clique em cada item da lista
             listItem.addEventListener('click', () => {
                 renderVideo(video);
-                // Remove a classe 'selected' de todos os itens da playlist
+                // Remove a classe 'active' de todos os itens da playlist
                 document.querySelectorAll('.playlist-item').forEach(item => {
-                    item.classList.remove('selected');
+                    item.classList.remove('active');
                 });
-                // Adiciona a classe 'selected' ao item clicado
-                listItem.classList.add('selected');
+                // Adiciona a classe 'active' ao item clicado
+                listItem.classList.add('active');
             });
             playlist.appendChild(listItem);
         });
     }
 
-
     // Renderiza a playlist e o primeiro vídeo ao carregar a página
     renderPlaylist();
-    loadFirstItem();
+    loadFirstItem(); // Certifique-se de chamar esta função para carregar o primeiro item da lista
 });
