@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="descriptions" content="Os benefícios que a bike proporciona">
+  <title>NumaBike - Página Contato</title>
+  <link rel="stylesheet" type="text/css" href="styless.css">
+</head>
+
+<body class="tips-page">
+  <header class="cabecalho">
+    <img class="cabecalho-imagem" src="assets/numaBike_logo.svg" alt="Logo Bike Life">
+    <nav class="cabecalho-menu">
+
+      <a class="cabecalho-menu-item" href="tips.html">Dicas</a>
+      <a class="cabecalho-menu-item" href="contact.html">Contato</a>
+
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <section class="conteudo-principal">
+      <div class="conteudo-principal-escrito">
+        <h1 class="conteudo-principal-escrito-titulo">Contato</h1>
+        <h2 class="conteudo-principal-escrito-subtitulo">deixe sua duvida ou sugestão</h2>
+      </div>
+      <img class="conteudo-principal-imagem" src="assets/image_principal.svg"
+        alt="Imagem representativa de uma bicicleta">
+    </section>
+
+    <section class="main-contact">
+      <form action="https://api.staticforms.xyz/submit" method="post">
+        <input type="hidden" name="accessKey" value="5ec26e8d-4f9b-4938-9800-7e62a44ef2f3">
+        <label>Nome</label>
+        <input type="text" name="name" placeholder="Digite seu nome">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="seu-email@gmail.com">
+        <label>Mensagem</label>
+        <textarea name="message" cols="30" rows="10" placeholder="Digite sua mensagem"></textarea>
+        <button type="submit">Enviar</button>
+
+        <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/contact.html">
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <img class="rodape-imagem" src="assets/numaBike_logo.svg" alt="Logo Bike Life">
+  </footer>
+</body>
+
+</html>
